@@ -15,7 +15,7 @@ module HAR
     end
 
     def started_date_time
-      @started_date_time ||= pages.first.startedDateTime rescue Time.now
+      @started_date_time ||= pages.first.started_date_time
     end
 
     def source_url
