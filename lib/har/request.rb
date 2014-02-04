@@ -5,7 +5,7 @@ module HAR
     end
 
     def domain
-      URI.parse(url).host rescue url
+      URI.parse(URI.encode(url)).host
     end
   end
 end
