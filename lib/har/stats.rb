@@ -128,7 +128,7 @@ module HAR
     end
 
     def get_host url
-      URI.parse(url).host
+      URI.parse(URI.encode(url)).host
     end
   end
 end
