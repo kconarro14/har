@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "jschematic", ">= 0.1.0"
   s.add_dependency "launchy", ">= 0.3.7"
   s.add_dependency "httparty", "~> 0.10.0"
+  s.add_dependency "addressable"
 
   s.add_development_dependency "rspec", "~> 2.0"
   s.add_development_dependency "simplecov"

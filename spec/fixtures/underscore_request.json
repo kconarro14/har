@@ -1,0 +1,58 @@
+{
+  "method": "GET",
+  "url": "http://my_weird_underscore.example.com/home",
+  "httpVersion": "HTTP/1.1",
+  "cookies": [
+    {
+      "name": "PREF",
+      "value": "ID"
+    },
+    {
+      "name": "NID",
+      "value": "29"
+    }
+  ],
+  "headers": [
+    {
+      "name": "Host",
+      "value": "www.google.cz"
+    },
+    {
+      "name": "User-Agent",
+      "value": "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2b6pre) Gecko/20091230 Namoroka/3.6b6pre (.NET CLR 3.5.30729)"
+    },
+    {
+      "name": "Accept",
+      "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    {
+      "name": "Accept-Language",
+      "value": "en-us,en;q=0.5"
+    },
+    {
+      "name": "Accept-Encoding",
+      "value": "gzip,deflate"
+    },
+    {
+      "name": "Accept-Charset",
+      "value": "ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+    },
+    {
+      "name": "Keep-Alive",
+      "value": "115"
+    },
+    {
+      "name": "Connection",
+      "value": "keep-alive"
+    },
+    {
+      "name": "Cookie",
+      "value": "PREF=ID=580ec4c5a3534337:U=37a8fcc41ff49f78:TM=1260796678:LM=1260796682:S=9BgbomVM6pcnfah0; NID=29=OHyg2zMZl4IpG8C4a-Z5itM3gCXOuBPogGpTPVFPNsdpmIHJWX78ymRL_gqptvhr_IQrP319GQ1fxlKUsqaIokpxasPIIDq5ijatDmYiyamnCfJz8rXyNvt5GPjCJp2I"
+    }
+  ],
+  "queryString": [
+
+  ],
+  "headersSize": 632,
+  "bodySize": -1
+}

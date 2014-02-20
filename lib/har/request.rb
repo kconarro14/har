@@ -1,3 +1,5 @@
+require "addressable/uri"
+
 module HAR
   class Request < SchemaType
     def initialize(input)
@@ -5,7 +7,7 @@ module HAR
     end
 
     def domain
-      URI.parse(URI.encode(url)).host
+      Addressable::URI.parse(URI.encode(url)).host
     end
   end
 end
