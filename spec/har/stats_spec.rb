@@ -54,5 +54,25 @@ module HAR
         end
       end
     end
+
+    context 'non-zero load times' do
+      let(:nonzero_stats) { Archive.from_file(har_path("google_nonzero")).stats }
+      
+      it 'returns non-zero page load time' do
+        nonzero_stats.page_load_time.should == -1
+      end
+
+      it 'provides entry-based page load time' do
+        nonzero_stats.safe_page_load_time.should > 0
+      end
+
+      it 'returns non-zero dom load time' do
+        nonzero_stats.dom_load_time.should == -1
+      end
+
+      it 'provides safe dom load time' do
+        nonzero_stats.safe_dom_load_time.should == 0
+      end
+    end
   end
 end

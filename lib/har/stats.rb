@@ -46,8 +46,20 @@ module HAR
       @dom_load_time ||= pages.first.timings.on_content_load
     end
 
+    def safe_dom_load_time
+      dom_load_time > 0 ? dom_load_time : 0
+    end
+
     def page_load_time
       @page_load_time ||= pages.first.timings.on_load
+    end
+
+    def safe_page_load_time
+      page_load_time > 0 ? page_load_time : estimated_load_time
+    end
+
+    def estimated_load_time
+      entries.map(&:time).reduce(:+)
     end
 
     def page_size
