@@ -4,7 +4,7 @@ module HAR
 
     def self.from_url(url, options={})
       options = {:headers => {'Content-Type' => 'application/json'}}.merge(options)
-      new JSON.parse(HTTParty.get(url, options).chomp(")").gsub("onInputData(", ""))
+      new JSON.parse(fetch_har(url, options))
     end
 
     def self.from_string(str, uri = nil)
@@ -137,6 +137,21 @@ module HAR
     end
 
     private
+
+    def self.fetch_har url, options
+      retries = 0
+      begin
+        response = HTTParty.get(url, options)
+        sanitize_json(response)
+      rescue => e
+        retries += 1
+        retry if retries < 4
+      end
+    end
+
+    def self.sanitize_json response
+      response.chomp(")").gsub("onInputData(", "")
+    end
 
     def log_type_schema
       @schema ||= self.class.schemas.fetch('logType')
