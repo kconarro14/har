@@ -77,7 +77,8 @@ module HAR
         wait_time: wait_time,
         receive_time: receive_time,
         started_at: started_at,
-        ended_at: ended_at
+        ended_at: ended_at,
+        request_count: children.count
       }      
     end
 
