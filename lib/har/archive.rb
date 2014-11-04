@@ -39,6 +39,11 @@ module HAR
       result
     end
 
+    def self.by_averaging(hars)
+      hars = hars.dup
+      
+    end
+
     # @api private
     def self.schemas
       @schemas ||= {}
@@ -74,7 +79,11 @@ module HAR
     end
 
     def entries
-      @entries ||= raw_entries.map { |e| Entry.new(e) }
+      @entries ||= raw_entries.map { |e| Entry.new(e, self) }
+    end
+
+    def entry_collection
+      @entry_collection ||= EntryCollection.new(self)
     end
 
     def request_urls

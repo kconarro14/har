@@ -12,7 +12,11 @@ require 'har/request'
 require 'har/response'
 require 'har/archive'
 require 'har/stats'
+require 'har/entry'
+require 'har/entry_collection'
+require 'har/referer'
 require 'har/viewer'
+require 'har/domain_collection'
 require 'har/extensions/jschematic/attributes/format'
 
 
