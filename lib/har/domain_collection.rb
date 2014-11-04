@@ -48,7 +48,7 @@ module HAR
         attrs = {:total_time => 0}
           
         self.timing_types.each do |type|
-          attrs["#{type}_time".to_sym] = entries.map(&:timings).map(&type).reduce(:+)
+          attrs["#{type}_time".to_sym] = entries.map(&:timings).map(&type).select {|t| t > -1 }.reduce(:+).to_i
           attrs[:total_time] += attrs["#{type}_time".to_sym]
         end
         
